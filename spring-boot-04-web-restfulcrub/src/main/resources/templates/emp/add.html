@@ -82,7 +82,7 @@
 
                         <div class="form-group">
                             <label>LastName</label>
-                            <input name="lastName" type="text" class="form-control" placeholder="zhangsan" th:value="${emp != null}?${emp.lastName}">
+                            <input name="lastName" type="text" class="form-control" placeholder="zhangsan" th:value="${emp != null}?${emp.lastName}"><!--这里应该是三目运算符少了个:的写法，因为只需要条件满足时取值-->
                         </div>
                         <div class="form-group">
                             <label>Email</label>

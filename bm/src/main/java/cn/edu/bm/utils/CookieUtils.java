@@ -1,4 +1,4 @@
-package com.nowcoder.project.utils;
+package cn.edu.bm.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +31,7 @@ public class CookieUtils {
   }
 
   public static void removeCookie(String key, HttpServletRequest request, //没有地方用了这个函数啊，所以也是未实现的功能？
-      HttpServletResponse response) {
+                                  HttpServletResponse response) {
 
     Cookie[] cookies = request.getCookies();
 

@@ -1,12 +1,13 @@
-package com.nowcoder.project.service;
+package cn.edu.bm.service;
 
 
-import com.nowcoder.project.dao.BookDAO;
-import com.nowcoder.project.model.Book;
-import com.nowcoder.project.model.enums.BookStatusEnum;
-import java.util.List;
+import cn.edu.bm.dao.BookDAO;
+import cn.edu.bm.model.Book;
+import cn.edu.bm.model.enums.BookStatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by nowcoder on 2018/08/04 下午3:41
@@ -43,4 +44,11 @@ public class BookService {
   public void recoverBooks(int id) {
     bookDAO.updateBookStatus(id, BookStatusEnum.NORMAL.getValue());
   }
+
+  public List<Book> searchForBooks(String authorOrName) { //getBooks 这个名好似好些
+    return bookDAO.selectBooks(authorOrName);//因为name和author都是String类型无法重载，所以这里就做了一定的修改
+  }
+ /* public List<Book> searchForBooks(String name) { //getBooks 这个名好似好些
+    return bookDAO.selectBooksByAuthor(name);
+  }*/
 }
